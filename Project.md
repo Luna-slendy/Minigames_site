@@ -16,7 +16,8 @@
 
 
 3. 
-    3.1. Frontend
+    3.1. 
+	Frontend
     Stacks-
     core: React, Vite
     other: JSX, CSS
@@ -24,7 +25,8 @@
     Stacks -
     Node.js, PostgreSQL + ORM(Idk...) + some additions(Idk...)
 
-    3.2. frontend + backend interaction:
+    3.2. 
+	frontend + backend interaction:
     React handles all rendering and game logic.
     Backend stores: Auth, Scores, Quiz votes, Wiki, Timer history
     Games run entirely client-side (important for performance)
