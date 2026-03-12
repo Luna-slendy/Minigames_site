@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(120deg, #12001e, #2b0052, #ff00c8, #5e00ff, #12001e);
+  background-size: 400% 400%;
+  animation: bgFlow 18s ease infinite;
+
+  color: #ffe8ff;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: radial-gradient(rgba(255, 0, 200, 0.25) 2px, transparent 2px);
+  background-size: 60px 60px;
+  animation: starsMove 40s linear infinite;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.App {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+
+  color: #ff7bff;
+  text-shadow:
+    0 0 10px #ff00ef,
+    0 0 20px #ff00ef,
+    0 0 45px #ff00ef,
+    0 0 70px #b300ff;
+    
+  animation: neonPulse 2.5s ease-in-out infinite;
+}
+
+button {
+  background: linear-gradient(135deg, #26002d, #3d0062, #7008b6);
+  color: #ffd9ff;
+
+  border: 2px solid rgba(255, 0, 230, 0.6);
+  border-radius: 14px;
+
+  padding: 14px 28px;
+  margin: 12px;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow:
+    0 0 12px rgba(255, 0, 255, 0.5),
+    inset 0 0 18px rgba(100, 0, 120, 0.4);
+
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.08);
+
+  box-shadow:
+    0 0 25px rgba(255, 0, 255, 0.8),
+    0 0 55px rgba(150, 0, 255, 0.6),
+    inset 0 0 25px rgba(255, 0, 240, 0.6);
+
+  border-color: #ff5bff;
+}
+
+li {
+  background: linear-gradient(90deg, rgba(40, 0, 65, 0.85), rgba(120, 0, 160, 0.75));
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+
+  margin-bottom: 0.8rem;
+  color: #ffd0ff;
+
+  font-weight: 500;
+
+  border: 1px solid rgba(255, 90, 255, 0.4);
+  box-shadow: 0 0 15px rgba(150, 0, 200, 0.4);
+  transition: 0.25s ease;
+}
+
+li:hover {
+  transform: translateX(12px);
+  box-shadow:
+    0 0 25px rgba(255, 100, 255, 0.7),
+    0 0 45px rgba(150, 0, 200, 0.5);
+}
+
+@keyframes bgFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes neonPulse {
+  0%, 100% { opacity: 1; }
+  50% {
+    opacity: 0.6;
+    text-shadow:
+      0 0 15px #ff00ef,
+      0 0 40px #ff00ef,
+      0 0 75px #b300ff;
+  }
+}
+
+@keyframes starsMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(300px, 400px); }
+}
+
+.main-title {
+  text-align: left;
+  margin: 2rem 0 1.5rem 2rem;
+}
+
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 2rem;
+  width: fit-content;
+}
+
+
+@keyframes floaty {
+  0% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-48%) translateX(10px); }
+  100% { transform: translateY(-50%) translateX(0); }
+}
+
+.side-image {
+  position: absolute;
+  right: 83%;
+  top: 100%;
+  transform: translateY(-50%);
+  width: auto;   /* let width adjust automatically */
+  height: 35vh; /* full height */
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible; /* allow image to extend outside container */
+}
+
+.side-image img {
+  height: 100%;
+  width: auto;   /* maintain aspect ratio */
+  opacity: 0.65;
+  filter: drop-shadow(0 0 25px #ff00e0);
+  user-select: none;
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  grid-gap: 60px;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.game-icon {
+  width: 160px;
+  height: 160px;
+
+  cursor: pointer;
+
+  border-radius: 8px;
+
+  transition: transform 0.2s ease;
+}
+
+.game-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: 6px;
+
+  box-shadow: 0 0 25px rgba(255,0,200,0.5);
+}
+
+.game-icon:hover {
+  transform: scale(1.12);
+}
+
+.arcade-title {
+  margin-top: 60px;
+
+  font-size: 3rem;
+
+  color: #a7f9ff;
+
+  text-shadow:
+  0 0 10px #00eaff,
+  0 0 30px #00eaff,
+  0 0 60px #00eaff;
+}
