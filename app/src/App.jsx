@@ -3,23 +3,24 @@ import "./App.css";
 
 import Mascot from "./assets/Mascot.png";
 
-import clickerIcon from "./assets/Doom.png";
-import galleryIcon from "./assets/Tetris.png";
-import scoreIcon from "./assets/quiz.png";
+import DoomIcon from "./assets/Doom.png";
+import TetrisIcon from "./assets/Tetris.png";
+import QuizIcon from "./assets/quiz.png";
 import pinballIcon from "./assets/pinball.png";
-import listenIcon from "./assets/puyo_puyo.png";
+import Puyo_PuyoIcon from "./assets/puyo_puyo.png";
 
-import clickSoundFile from "./assets/michael-dont-leave-me-here.mp3";
+import clickSoundFile from "./assets/click.mp3";
 
 import { AuthContext } from "./AuthContext";
 import Login from "./Login";
 import Signup from "./Signup";
 
-import Doom from "./Doom";
-import Tetris from "./Tetris";
 import Quiz from "./Quiz";
 import Pinball from "./Pinball";
 import Puyo_puyo from "./Puyo_Puyo";
+import Doom from "./Doom";
+import Tetris from "./Tetris";
+
 
 function App() {
 
@@ -64,7 +65,17 @@ function App() {
       ) : page === "Tetris" ? (
         <Tetris goBack={() => setPage("main")} />
 
-      ) : (
+      ) : page === "Pinball" ? (
+        <Pinball goBack={() => setPage("main")} />
+
+      ) : page === "Quiz" ? (
+        <Quiz goBack={() => setPage("main")} />
+
+      ) : page === "Puyo_Puyo" ? (
+        <Puyo_puyo goBack={() => setPage("main")} />
+
+      ) :
+       (
         <>
 
           <div className="icon-grid">
@@ -73,14 +84,14 @@ function App() {
               className="game-icon"
               onClick={() => handlePageChange("Doom")}
             >
-              <img src={clickerIcon} alt="Doom" />
+              <img src={DoomIcon} alt="Doom" />
             </div>
 
             <div
               className="game-icon"
               onClick={() => handlePageChange("Tetris")}
             >
-              <img src={galleryIcon} alt="Tetris" />
+              <img src={TetrisIcon} alt="Tetris" />
             </div>
 
             <div
@@ -94,14 +105,14 @@ function App() {
               className="game-icon"
               onClick={() => handlePageChange("Quiz")}
             >
-              <img src={scoreIcon} alt="Quiz" />
+              <img src={QuizIcon} alt="Quiz" />
             </div>
 
             <div
               className="game-icon"
               onClick={() => handlePageChange("Puyo_Puyo")}
             >
-              <img src={listenIcon} alt="Puyo Puyo" />
+              <img src={Puyo_PuyoIcon} alt="Puyo Puyo" />
             </div>
 
           </div>
