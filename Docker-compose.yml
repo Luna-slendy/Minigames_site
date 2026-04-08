@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: ./Frontend/app
+      dockerfile: Dockerfile
+    container_name: vite-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Frontend/app:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm run dev -- --host
+    restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-tunnel
+    depends_on:
+      - frontend
+    volumes:
+      - ./.cloudflared:/etc/cloudflared:ro
+    command: tunnel --config /etc/cloudflared/config.yml run
+    restart: unless-stopped

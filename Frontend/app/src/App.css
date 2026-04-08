@@ -8,7 +8,8 @@ body {
   animation: bgFlow 18s ease infinite;
 
   color: #ffe8ff;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto; 
 }
 
 body::before {
@@ -207,3 +208,4 @@ li:hover {
   0 0 30px #00eaff,
   0 0 60px #00eaff;
 }
+
