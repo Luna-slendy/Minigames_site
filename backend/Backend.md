@@ -73,6 +73,7 @@ Install dependencies:
 ```
 
 npm install
+pip install email-validator
 
 ```
 
