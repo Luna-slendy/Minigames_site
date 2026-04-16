@@ -73,11 +73,6 @@
 
 
 
-
-
- 
-
-
 9. Work separation
     D - Diterimum. L - Luna-Slendy.
         main page (menu) D
@@ -88,3 +83,25 @@
 	    tetris page L
 	    DOOM page D
 	    small wiki page L
+
+Minigames_site
+│
+├── .gitignore
+├── .venv
+│
+├── backend
+│   ├── app
+│   │   ├── db.py
+│   │   ├── models.py
+│   │   └── main.py
+│   ├── .env
+│   ├── .env.example
+│   └── requirements.txt
+│
+├── frontend
+│   ├── src
+│   └── package.json
+│
+└── README.md
+
+Before reload Backend you have to read Backend.md
