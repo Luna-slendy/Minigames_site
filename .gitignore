@@ -5,3 +5,7 @@ __pycache__/
 
 # env variables
 backend/.env
+
+
+# pipeline
+/actions-runner/
