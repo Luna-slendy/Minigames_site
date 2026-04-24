@@ -9,7 +9,14 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Pull latest changes into local repo
+      - name: Pull latest changes and restart Docker
         run: |
           cd C:\Users\flawy\Documents\project-github\Minigames_site
+
           git pull origin main
+
+          # Stop existing containers (optional but recommended)
+          docker compose down
+
+          # Rebuild and start
+          docker compose up -d --build
